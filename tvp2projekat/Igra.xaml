@@ -1,0 +1,52 @@
+﻿<Page x:Class="tvp2projekat.Igra"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:tvp2projekat"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="400"
+      Title="Igra">
+
+    <Grid x:Name="GridPanel">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Image Stretch="Uniform" Source="Slike/pozadina.jpg" VerticalAlignment="Top" HorizontalAlignment="Center" Height="833" Margin="-232,-129,-192,-304" Width="824" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left">
+            <Button x:Name="BtnOK" Content="Ubaci" VerticalAlignment="Center" HorizontalAlignment="Left" Click="BtnOKClick" FontSize="18" Margin="2"/>
+            <Button x:Name="BtnDelete" Content="Izbrisi" VerticalAlignment="Center" HorizontalAlignment="Left" Click="BtnDeleteClick" FontSize="18" Margin="2"/>
+            <Label x:Name="lblGG" Content="Game Over" Foreground="Red" FontWeight="Bold" Visibility="Collapsed" FontSize="20" VerticalAlignment="Center"/>
+            <Label x:Name="lblVreme" Content="Vreme: 100" VerticalAlignment="Center" FontSize="18" Foreground="Red"/>
+            <Button x:Name="ContinueBtn" Content="Continue" VerticalAlignment="Center" Visibility="Collapsed" Click="ContinueBtnClick" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right">
+            <Image x:Name="Slika0" Source="Slike/Herc.png" MouseUp="HercKlik" />
+            <Image x:Name="Slika1" Source="Slike/Karo.png" MouseUp="KaroKlik" />
+            <Image x:Name="Slika2" Source="Slike/Pik.png" MouseUp="PikKlik" />
+            <Image x:Name="Slika3" Source="Slike/Tref.png" MouseUp="TrefKlik"  />
+            <Image x:Name="Slika4" Source="Slike/Zvezda.png" MouseUp="ZvezdaKlik"  />
+            <Image x:Name="Slika5" Source="Slike/Grom.png" MouseUp="GromKlik"   />
+        </StackPanel>
+        <Grid x:Name="GridKraj" Grid.Row="1" Grid.Column="0" Margin="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="Slike/PoljeKraj.png" Grid.Column="0"/>
+            <Image Source="Slike/PoljeKraj.png" Grid.Column="1"/>
+            <Image Source="Slike/PoljeKraj.png" Grid.Column="2"/>
+            <Image Source="Slike/PoljeKraj.png" Grid.Column="3"/>
+        </Grid>
+    </Grid>
+</Page>

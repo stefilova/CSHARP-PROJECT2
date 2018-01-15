@@ -1,0 +1,34 @@
+﻿<Page x:Class="tvp2projekat.HighscoresPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:tvp2projekat"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="HighscoresPage">
+
+    <Grid Background="#e6ffff" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel VerticalAlignment="Stretch" >
+            <ComboBox x:Name="comboBox" SelectionChanged="selectionChanged" Margin="0,5,0,5">
+                <ComboBoxItem Content="Easy"/>
+                <ComboBoxItem Content="Normal"/>
+                <ComboBoxItem Content="Hard"/>
+            </ComboBox>
+            <DataGrid x:Name="Tabela" AlternationCount="2" Background="#FF0990B8" MinRowHeight="10" CanUserDeleteRows="False" AutoGenerateColumns="False" IsEnabled="False" CanUserResizeRows="False" RowDetailsVisibilityMode="Visible">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding pozicija}" ClipboardContentBinding="{Binding pozicija}" Header="Pozicija" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding username}" ClipboardContentBinding="{Binding username}" Header="Ime" Width="*"/>
+                    <DataGridTextColumn Binding="{Binding score}" ClipboardContentBinding="{Binding score}" Header="Score" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </StackPanel>
+        <Button Content="Nazad" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Row="1" Click="Button_Click" Margin="10" FontSize="18"/>
+        <MediaElement x:Name="mediaElement" HorizontalAlignment="Left" VerticalAlignment="Bottom" MediaEnded="mediaElement_MediaEnded" Source="HSMusic.mp3" LoadedBehavior="Play" Balance="0"/>
+    </Grid>
+</Page>
